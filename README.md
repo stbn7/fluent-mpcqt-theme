@@ -13,19 +13,29 @@
 
 
 ### Instrucciones 
-- Clonar el repositorio <a href="https://github.com/mpc-qt/mpc-qt">Mpc-qt</a> usando el siguiente comando: 
+- Descargar <strong>mpc-qt v24.06</strong>
     
   ```
-  git clone https://github.com/mpc-qt/mpc-qt.git
+  wget https://github.com/mpc-qt/mpc-qt/archive/refs/tags/v24.06.zip
   ```
-- Clonar este repositorio:
+
+- Extraer el archivo `v24.06.zip`
+
+  ```
+  unzip v24.06.zip   
+  ```
+- Clonar este repositorio
   
   ```
   git clone https://github.com/stbn7/fluent-dark-mpcqt-theme.git
   ```
-- Copiar todo el contenido de la carpeta `fluent-dark-mpcqt-theme` dentro de la carpeta del repositorio <strong>mpc-qt</strong>
+- Copiar todo el contenido de la carpeta `fluent-dark-mpcqt-theme` dentro de la carpeta `mpc-qt-24.06`
 
-- Finalmente, dentro de la carpera <strong>mpc-qt</strong> abre la terminal y ejecuta los siguientes comandos:
+  ```
+  cp -r fluent-dark-mpcqt-theme/* mpc-qt-24.06/   
+  ```
+
+- Finalmente, dentro de la carpera `mpc-qt-24.06` abre la terminal y ejecuta los siguientes comandos:
 
   ```
   qmake6
