@@ -46,6 +46,9 @@ public:
     QPoint desirablePosition(QSize &size, bool first_run = false);
     void unfreezeWindow();
 
+    QString getTitleMedia() const;
+    void setTitleMedia(const QString &newTitleMedia);
+
 protected:
     void resizeEvent(QResizeEvent *event);
     bool eventFilter(QObject *object, QEvent *event);
@@ -157,7 +160,6 @@ signals:
     void playCurrentItemRequested();
     void favoriteCurrentTrack();
     void organizeFavorites();
-
 
 
 public slots:
@@ -402,6 +404,7 @@ private slots:
     void on_sliderSeekBarPrototipe_sliderMoved(double value, QString text, double x);
     void on_sliderVolumenPrototipe_valueChanged(int position);
 
+
 private:
     Ui::MainWindow *ui = nullptr;
     QMainWindow *mpvHost_ = nullptr;
@@ -461,6 +464,7 @@ private:
     MouseStateMap mouseMapWindowed;
     MouseStateMap mouseMapFullscreen;
 
+    QString titleMedia;
 };
 
 #endif // HOSTWINDOW_H

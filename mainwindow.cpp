@@ -307,6 +307,101 @@ void MainWindow::resizeEvent(QResizeEvent *event)
     Q_UNUSED(event)
     updateBottomAreaGeometry();
     checkBottomArea(QCursor::pos());
+
+    if(ui->bottomArea->width() > 1000)
+    {
+        ui->speedDecrease->setHidden(false);
+        ui->speedIncrease->setHidden(false);
+        ui->stop->setHidden(false);
+        ui->shuffle->setHidden(false);
+        ui->library->setHidden(false);
+        ui->subs->setHidden(false);
+        ui->cover->setHidden(false);
+        ui->mediaTitle->setMaximumSize(330,16777215);
+        ui->sliderVolumenPrototipe->setMaximumSize(80,16777215);
+        ui->sliderVolumenPrototipe->setHidden(false);
+        ui->widgetPlayer3->show();
+        ui->mute->setHidden(false);
+        ui->fullscreen->setHidden(false);
+        ui->widgetPlayer2->show();
+
+        if(this->getTitleMedia().length() > 38)
+        {
+            ui->mediaTitle->setText(this->getTitleMedia().left(35).append(" ..."));
+
+        }else
+        {
+            ui->mediaTitle->setText(this->getTitleMedia());
+        }
+
+
+    }
+
+
+    if(ui->bottomArea->width() <= 1000 && ui->bottomArea->width() > 700)
+    {
+        ui->stop->setHidden(true);
+        ui->shuffle->setHidden(true);
+        ui->library->setHidden(true);
+        ui->mediaTitle->setMaximumSize(170,16777215);
+        ui->sliderVolumenPrototipe->setHidden(false);
+        ui->sliderVolumenPrototipe->setMaximumSize(60,16777215);
+        ui->widgetPlayer3->show();
+        ui->mute->setHidden(false);
+        ui->fullscreen->setHidden(false);
+        ui->widgetPlayer2->show();
+
+        if(this->getTitleMedia().length() > 15)
+        {
+            ui->mediaTitle->setText(this->getTitleMedia().left(15).append(" ..."));
+
+        }else
+        {
+            ui->mediaTitle->setText(this->getTitleMedia());
+        }
+
+    }
+    if(ui->bottomArea->width() > 550 && ui->bottomArea->width() <= 700)
+    {
+        ui->stop->setHidden(true);
+        ui->shuffle->setHidden(true);
+        ui->library->setHidden(true);
+        ui->cover->setHidden(true);
+        ui->subs->setHidden(true);
+        ui->mediaTitle->setMaximumSize(150,16777215);
+        ui->sliderVolumenPrototipe->setHidden(true);
+        ui->sliderVolumenPrototipe->setMaximumSize(50,16777215);
+        ui->widgetPlayer3->show();
+        ui->mute->setHidden(false);
+        ui->fullscreen->setHidden(false);        
+        ui->widgetPlayer2->show();
+
+        if(this->getTitleMedia().length() > 15)
+        {
+            ui->mediaTitle->setText(this->getTitleMedia().left(15).append(" ..."));
+
+        }else
+        {
+            ui->mediaTitle->setText(this->getTitleMedia());
+        }
+
+    }
+    if(ui->bottomArea->width() > 0 && ui->bottomArea->width() <= 550)
+    {
+        ui->stop->setHidden(true);
+        ui->shuffle->setHidden(true);
+        ui->library->setHidden(true);
+        ui->cover->setHidden(false);
+        ui->subs->setHidden(true);
+        ui->mediaTitle->setMaximumSize(150,16777215);
+        ui->sliderVolumenPrototipe->setHidden(true);
+        ui->sliderVolumenPrototipe->setMaximumSize(50,16777215);
+        ui->widgetPlayer3->hide();
+        ui->mute->setHidden(true);
+        ui->fullscreen->setHidden(true);
+        ui->widgetPlayer2->hide();
+    }
+
 }
 
 bool MainWindow::eventFilter(QObject *object, QEvent *event)
@@ -1109,6 +1204,7 @@ void MainWindow::updateBottomAreaGeometry()
         sz -= QSize(playlistWindow_->width(), 0);
     ui->bottomArea->setGeometry(0, sz.height() - bottomAreaHeight,
                                 sz.width(), bottomAreaHeight);
+
 }
 
 void MainWindow::updateTime()
@@ -1728,12 +1824,24 @@ void MainWindow::setMediaTitle(QString title)
         title = "Unknown";
     }
 
-    ui->mediaTitle->setText(title);
 
-    if (freestanding_)
+    if(title.length() > 38)
+    {
+        ui->mediaTitle->setText(title.left(35).append(" ..."));
+
+    }else
+    {
+        ui->mediaTitle->setText(title);
+
+    }
+
+    this->setTitleMedia(title);
+
+
+    /**if (freestanding_)
         window_title.append(tr(" "));
     if (!title.isEmpty())
-        window_title.append(" - ").append(title);
+        window_title.append(" - ").append(title);**/
     setWindowTitle(window_title);
 
 }
@@ -2996,6 +3104,16 @@ void MainWindow::on_sliderVolumenPrototipe_valueChanged(int position)
 {
     MainWindow::volume_sliderMoved(position);
 
+}
+
+QString MainWindow::getTitleMedia() const
+{
+    return titleMedia;
+}
+
+void MainWindow::setTitleMedia(const QString &newTitleMedia)
+{
+    titleMedia = newTitleMedia;
 }
 
 
