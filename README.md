@@ -1,6 +1,6 @@
 
 <div align="center">
-	<h1>Tema Fluent Dark Mpc-Qt</h1>
+	<h1>Tema Fluent Mpc-Qt</h1>
 	<p>
 		<b> Tema Fluent Dark para el reproductor <a href="https://github.com/mpc-qt/mpc-qt">Media Player Classic Qute Theather</a>.
 	</p>
