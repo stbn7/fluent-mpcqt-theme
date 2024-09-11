@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1277</width>
+    <width>1301</width>
     <height>531</height>
    </rect>
   </property>
@@ -62,6 +62,18 @@
     </item>
     <item>
      <widget class="QWidget" name="bottomArea" native="true">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>16777215</height>
+       </size>
+      </property>
       <property name="autoFillBackground">
        <bool>true</bool>
       </property>
@@ -86,6 +98,18 @@
        </property>
        <item>
         <widget class="QFrame" name="controlSection">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>16777215</height>
+          </size>
+         </property>
          <layout class="QVBoxLayout" name="controlSectionLayout">
           <property name="spacing">
            <number>0</number>
@@ -107,7 +131,13 @@
             <property name="minimumSize">
              <size>
               <width>0</width>
-              <height>50</height>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
              </size>
             </property>
             <layout class="QHBoxLayout" name="seekbarLayout">
@@ -125,13 +155,13 @@
             <property name="minimumSize">
              <size>
               <width>0</width>
-              <height>75</height>
+              <height>0</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
               <width>16777215</width>
-              <height>75</height>
+              <height>16777215</height>
              </size>
             </property>
             <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -154,34 +184,6 @@
                     <property name="spacing">
                      <number>10</number>
                     </property>
-                    <item>
-                     <widget class="QPushButton" name="cover">
-                      <property name="minimumSize">
-                       <size>
-                        <width>48</width>
-                        <height>48</height>
-                       </size>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>60</width>
-                        <height>60</height>
-                       </size>
-                      </property>
-                      <property name="text">
-                       <string/>
-                      </property>
-                      <property name="iconSize">
-                       <size>
-                        <width>60</width>
-                        <height>60</height>
-                       </size>
-                      </property>
-                      <property name="flat">
-                       <bool>true</bool>
-                      </property>
-                     </widget>
-                    </item>
                     <item>
                      <layout class="QVBoxLayout" name="verticalSectionMediaInfo">
                       <item>
@@ -210,7 +212,7 @@
                         </property>
                         <property name="font">
                          <font>
-                          <pointsize>12</pointsize>
+                          <pointsize>11</pointsize>
                           <bold>true</bold>
                          </font>
                         </property>
@@ -421,8 +423,8 @@
                  </property>
                  <property name="iconSize">
                   <size>
-                   <width>44</width>
-                   <height>44</height>
+                   <width>40</width>
+                   <height>40</height>
                   </size>
                  </property>
                  <property name="flat">
@@ -445,8 +447,8 @@
                  </property>
                  <property name="iconSize">
                   <size>
-                   <width>44</width>
-                   <height>44</height>
+                   <width>40</width>
+                   <height>40</height>
                   </size>
                  </property>
                  <property name="checkable">
@@ -827,6 +829,18 @@ QSlider::add-page:horizontal {
        </item>
        <item>
         <widget class="QFrame" name="infoSection">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>16777215</height>
+          </size>
+         </property>
          <property name="styleSheet">
           <string notr="true">color: rgb(255, 255, 255);
  background-color: rgb(0, 0, 0);</string>
@@ -990,7 +1004,7 @@ QSlider::add-page:horizontal {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1277</width>
+     <width>1301</width>
      <height>22</height>
     </rect>
    </property>

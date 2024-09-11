@@ -63,5 +63,10 @@
         <file>images/theme/white/cover.svg</file>
         <file>images/theme/white/fullscreen.svg</file>
         <file>images/theme/white/option.svg</file>
+        <file>images/theme/black/cover.svg</file>
+        <file>images/theme/black/fullscreen.svg</file>
+        <file>images/theme/black/media-shuffle.svg</file>
+        <file>images/theme/black/option.svg</file>
+        <file>images/theme/black/media-library.svg</file>
     </qresource>
 </RCC>

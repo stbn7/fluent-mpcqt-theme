@@ -316,7 +316,7 @@ void MainWindow::resizeEvent(QResizeEvent *event)
         ui->shuffle->setHidden(false);
         ui->library->setHidden(false);
         ui->subs->setHidden(false);
-        ui->cover->setHidden(false);
+        //ui->cover->setHidden(false);
         ui->mediaTitle->setMaximumSize(330,16777215);
         ui->sliderVolumenPrototipe->setMaximumSize(80,16777215);
         ui->sliderVolumenPrototipe->setHidden(false);
@@ -366,7 +366,7 @@ void MainWindow::resizeEvent(QResizeEvent *event)
         ui->stop->setHidden(true);
         ui->shuffle->setHidden(true);
         ui->library->setHidden(true);
-        ui->cover->setHidden(true);
+        //ui->cover->setHidden(true);
         ui->subs->setHidden(true);
         ui->mediaTitle->setMaximumSize(150,16777215);
         ui->sliderVolumenPrototipe->setHidden(true);
@@ -391,7 +391,7 @@ void MainWindow::resizeEvent(QResizeEvent *event)
         ui->stop->setHidden(true);
         ui->shuffle->setHidden(true);
         ui->library->setHidden(true);
-        ui->cover->setHidden(false);
+        //ui->cover->setHidden(false);
         ui->subs->setHidden(true);
         ui->mediaTitle->setMaximumSize(150,16777215);
         ui->sliderVolumenPrototipe->setHidden(true);
@@ -872,6 +872,7 @@ void MainWindow::setupSizing()
 
 void MainWindow::setupBottomArea()
 {
+
     QList<QWidget *> bottomWidgets = ui->bottomArea->findChildren<QWidget *>();
     foreach(QWidget *w, bottomWidgets)
         w->setMouseTracking(true);
@@ -894,13 +895,14 @@ void MainWindow::setupIconThemer()
         { ui->loopA, "zone-in", {} },
         { ui->shuffle, "media-shuffle", {} },
         { ui->loopB, "zone-out", {} },
+        //{ ui->cover, "cover", {} },
+        { ui->fullscreen, "fullscreen", {} },
+        { ui->library, "media-library", {} },
         { ui->subs, "view-media-subtitles", "view-media-subtitles-hidden" },
         { ui->mute, "player-volume", "player-volume-muted" }
     };
     for (auto &d : data)
         themer.addIconData(d);
-
-
 }
 
 void MainWindow::setupHideTimer()
@@ -1104,8 +1106,8 @@ void MainWindow::setUiEnabledState(bool enabled)
     ui->loopA->hide();
     ui->loopB->hide();
 
-    ui->cover->setIcon(QIcon(":/images/theme/white/cover.svg"));
-    ui->cover->setEnabled(enabled);
+    //ui->cover->setIcon(QIcon(":/images/theme/white/cover.svg"));
+    //ui->cover->setEnabled(enabled);
 
     ui->sliderVolumenPrototipe->setEnabled(enabled);
 
